@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SET the game</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <meta charset="UTF-8">
+</head>
+<body class="body-color">
+
+<div class="navbar bg-my-style">
+    <h1>SET</h1>
+</div>
+    <div class="row m-0">
+        <div id="fields" class="col-md-9 custom-margin-left mt-4 p-0"></div>
+        <div class="col-md-2 text-center p-0" id="button-fields">
+            <button class="btn btn-lg btn-outline-primary mt-4" value="Добавить" id="button_add" onclick="addTable()">Добавить</button>
+            <p id="record"></p>
+        </div>
+    </div>
+
+<div  id="win" class="modalwin ">
+            <h2 > SET </h2>
+</div>
+<div  id="lose" class="modallose ">
+            <h2 > Неверно </h2>
+</div>
+
+<script src="js/shuffle.js"></script>
+<script src="js/setImage.js"></script>
+<script src="js/script.js"></script>
+<script src="js/findSet.js"></script>
+</body>
+</html>
