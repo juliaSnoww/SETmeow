@@ -107,33 +107,35 @@ function deleteSet(arr) {
         }
       }
     }
+    if (trList.length === 4) {
+          var i = 9;
+
+        } else {
+          var i = 12;
+        }
     switch (count) {
       case 0:
         deleteEmptyRow(trList, tbl);
         break;
-
-      default:
-        if (trList.length === 4) {
-          var i = 9;
-        } else {
-          var i = 12;
-        }
+      default:        
         for (var cell of tdList) {
           if (
             cell.card === null &&
             ((i != 15 && trList.length === 5) ||
               (i != 12 && trList.length === 4))
           ) {
-            if (tdList[i].card != null) {
-              cell.card = tdList[i].card;
-              cell.innerHTML = tdList[i].card;
+
+            if(tdList[i].card == null && ((i!=11 && trList.length === 4) || (i!=14 && trList.length === 5))){             
               i++;
-            } else {
-              i++;
-              cell.card = tdList[i].card;
-              cell.innerHTML = tdList[i].card;
-              i++;
+              if(tdList[i].card == null && ((i!=11 && trList.length === 4) || (i!=14 && trList.length === 5))){
+                i++;
+              }
             }
+            if (tdList[i].card != null){
+              cell.card = tdList[i].card;
+              cell.innerHTML = tdList[i].card;
+              i++;
+            } 
           }
         }
         deleteEmptyRowFor4or5();
@@ -156,7 +158,7 @@ darkLayer.parentNode.removeChild(darkLayer);
 modalWin.style.display = 'none'; 
  return false;
   }
-
+  
 }
 
 function showModalLose() {
